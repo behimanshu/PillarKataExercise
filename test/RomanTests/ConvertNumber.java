@@ -20,6 +20,18 @@ public class ConvertNumber {
 		assertConversionCheck("I", 1);
 	}
 	
+	@Test
+	public void converting5()
+	{
+		assertConversionCheck("V", 5);
+	}
+	
+	@Test
+	public void converting10()
+	{
+		assertConversionCheck("X", 10);
+	}
+	
 	private void assertConversionCheck(String romanLiteral, int numeral)
 	{
 		assertEquals(romanLiteral, RomanConversion.convertNumber(numeral));
