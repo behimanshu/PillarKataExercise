@@ -5,6 +5,9 @@ public class RomanConversion {
 	private enum DigitAssignment
 	{
 		//setting the values for each unique roman literal
+		M(1000),
+		D(500),
+		C(100),
 		L(50),
 		X(10),
 		IX(9),
