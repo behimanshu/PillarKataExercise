@@ -20,6 +20,12 @@ public class ConvertNumber {
 		assertConversionCheck("III", 3);
 	}
 	
+	@Test
+	public void converting9()
+	{
+		assertConversionCheck("IX", 9);
+	}
+	
 
 	private void assertConversionCheck(String romanLiteral, int numeral) {
 		assertEquals(romanLiteral, RomanConversion.convertNumber(numeral));
