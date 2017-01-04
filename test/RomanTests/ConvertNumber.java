@@ -26,6 +26,11 @@ public class ConvertNumber {
 		assertConversionCheck("IX", 9);
 	}
 	
+	@Test
+	public void converting1066()
+	{
+		assertConversionCheck("MLXVI", 1066);
+	}
 
 	private void assertConversionCheck(String romanLiteral, int numeral) {
 		assertEquals(romanLiteral, RomanConversion.convertNumber(numeral));
