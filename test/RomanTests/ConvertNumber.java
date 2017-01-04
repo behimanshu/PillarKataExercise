@@ -14,6 +14,12 @@ public class ConvertNumber {
 		assertConversionCheck("I", 1);
 	}
 	
+	@Test
+	public void converting3()
+	{
+		assertConversionCheck("III", 3);
+	}
+	
 
 	private void assertConversionCheck(String romanLiteral, int numeral) {
 		assertEquals(romanLiteral, RomanConversion.convertNumber(numeral));
