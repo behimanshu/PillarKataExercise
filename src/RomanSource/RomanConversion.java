@@ -1,22 +1,28 @@
 package RomanSource;
 
 public class RomanConversion {
+	
+	private enum DigitAssignment
+	{
+		//setting the values for each unique roman literal
+		I(1), V(5), X(10);
+		private final int value;
+		
+		DigitAssignment(int value)
+		{
+			this.value = value;
+		}
+	}
+	
 	public static String convertNumber(int number)
 	{
-		if(number ==1)
+		for(DigitAssignment digit:DigitAssignment.values())
 		{
-			return "I";
+			if(number==digit.value)
+			{
+				return digit.name();
+			}
 		}
-		if(number ==5)
-		{
-			return "V";
-		}
-		if(number==10)
-		{
-			return "X";
-		}
-		return "";
-		
+		return "";	
 	}
-
 }

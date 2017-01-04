@@ -31,6 +31,7 @@ public class ConvertNumber {
 	{
 		assertConversionCheck("X", 10);
 	}
+
 	
 	private void assertConversionCheck(String romanLiteral, int numeral)
 	{
