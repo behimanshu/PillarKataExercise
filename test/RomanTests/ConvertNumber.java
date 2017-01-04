@@ -17,7 +17,7 @@ public class ConvertNumber {
 	@Test
 	public void converting1()
 	{
-		assertEquals("", RomanConversion.convertNumber(1));
+		assertEquals("I", RomanConversion.convertNumber(1));
 	}
 
 }
