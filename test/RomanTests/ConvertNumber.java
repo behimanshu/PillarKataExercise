@@ -11,13 +11,18 @@ public class ConvertNumber {
 
 	@Test
 	public void converting0() {
-		assertEquals("",RomanConversion.convertNumber(0));
+		assertConversionCheck("", 0);
 	}
 	
 	@Test
 	public void converting1()
 	{
-		assertEquals("I", RomanConversion.convertNumber(1));
+		assertConversionCheck("I", 1);
+	}
+	
+	private void assertConversionCheck(String romanLiteral, int numeral)
+	{
+		assertEquals(romanLiteral, RomanConversion.convertNumber(numeral));
 	}
 
 }
