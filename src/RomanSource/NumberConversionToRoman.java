@@ -18,26 +18,27 @@ public class NumberConversionToRoman {
 		romanNumbers.put('C', 100);
 		romanNumbers.put('D', 500);
 		romanNumbers.put('M', 1000);
-		char romanArray[] = romanLiteral.toCharArray();
-		int result = 0;
+		char[] romanNumArray = romanLiteral.toCharArray();
+		int sum = 0;
 		int j = 0;
-		for (int i = 1; i < romanArray.length; i++) {
-			if (romanNumbers.get(romanArray[j]) < romanNumbers.get(romanArray[i])) {
-				int val = romanNumbers.get(romanArray[i]) - romanNumbers.get(romanArray[j]);
-				result = result + val;
-
-			} else {
-				if (j == 0) {
-					result = romanNumbers.get(romanArray[0]);
+		for(int i = 1; i < romanNumArray.length; i++){
+			if(romanNumbers.get(romanNumArray[j]) < romanNumbers.get(romanNumArray[i])){
+				int val = romanNumbers.get(romanNumArray[i]) - romanNumbers.get(romanNumArray[j]);
+				sum = sum + val;
+			}else{
+				if(j == 0)
+					sum = romanNumbers.get(romanNumArray[0]);
+				if(romanNumArray.length > i+1 && romanNumbers.get(romanNumArray[j+1]) < romanNumbers.get(romanNumArray[i+1])){
+					
+				}else{
+					sum = sum + romanNumbers.get(romanNumArray[i]);
 				}
-				result = result + romanNumbers.get(romanArray[i]);
 			}
 			j++;
 		}
-		if (j == 0) {
-			result = romanNumbers.get(romanArray[0]);
-		}
-
-		return result;
+		if(j == 0)
+			sum = romanNumbers.get(romanNumArray[0]);
+	
+		return sum;
 	}
 }

@@ -14,10 +14,13 @@ public class RomanConversion {
 
 	}
 
+	//Recursive method to convert the values from Numerical digits to Roman Literals
 	public static String convertNumber(int number) {
-		for (DigitAssignment digit : DigitAssignment.values()) {
-			if (number >= digit.value) {
-				return digit.name() + convertNumber(number - digit.value);
+		if (number != 0) {
+			for (DigitAssignment digit : DigitAssignment.values()) {
+				if (number >= digit.value) {
+					return digit.name() + convertNumber(number - digit.value);
+				}
 			}
 		}
 		return "";

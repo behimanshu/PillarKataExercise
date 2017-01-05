@@ -32,6 +32,13 @@ public class ConvertRomanLiteral {
 		assertRomanConversion(1066, "MLXVI");
 	}
 
+	// Test to check whether MCMLXXXIX returns 1989 or not
+
+	@Test
+	public void convertingMCMLXXXIX() {
+		assertRomanConversion(1989, "MCMLXXXIX");
+	}
+
 	public void assertRomanConversion(int numeral, String romanLiteral) {
 		assertEquals(numeral, NumberConversionToRoman.convertRoman(romanLiteral));
 	}
