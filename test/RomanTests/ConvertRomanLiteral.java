@@ -19,10 +19,17 @@ public class ConvertRomanLiteral {
 		assertRomanConversion(3, "III");
 	}
 
-	// Test to check IX returns 9 or not
+	// Test to check whether IX returns 9 or not
 	@Test
 	public void convertingIX() {
 		assertRomanConversion(9, "IX");
+	}
+
+	// Test to check whether MLXVI returns 1066 or not
+
+	@Test
+	public void convertingMLXVI() {
+		assertRomanConversion(1066, "MLXVI");
 	}
 
 	public void assertRomanConversion(int numeral, String romanLiteral) {
