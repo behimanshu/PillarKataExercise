@@ -35,7 +35,7 @@ public class ConvertNumber {
 	@Test
 	public void converting1989()
 	{
-		assertConversionCheck("MDCCCCLXXXIX", 1989);
+		assertConversionCheck("MCMLXXXIX", 1989);
 	}
 
 	private void assertConversionCheck(String romanLiteral, int numeral) {

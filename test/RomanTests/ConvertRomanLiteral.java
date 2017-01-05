@@ -10,7 +10,7 @@ public class ConvertRomanLiteral {
 
 	@Test
 	public void convertingX() {
-		assertRomanConversion(10,"X");
+		assertRomanConversion(569,"DLXIX");
 	}
 
 	public void assertRomanConversion(int numeral, String romanLiteral)
