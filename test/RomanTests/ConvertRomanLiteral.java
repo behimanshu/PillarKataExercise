@@ -9,8 +9,8 @@ import RomanSource.NumberConversionToRoman;
 public class ConvertRomanLiteral {
 
 	@Test
-	public void convertingX() {
-		assertRomanConversion(569,"DLXIX");
+	public void convertingI() {
+		assertRomanConversion(1,"I");
 	}
 
 	public void assertRomanConversion(int numeral, String romanLiteral)

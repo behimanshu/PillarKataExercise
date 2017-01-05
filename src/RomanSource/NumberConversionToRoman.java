@@ -1,46 +1,49 @@
 package RomanSource;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import RomanSource.*;
 
 public class NumberConversionToRoman {
-
+	
+	static Map<Character, Integer> romanNumbers;
+	
 	public static int convertRoman(String romanLiteral) {
-		String romanArray[]= romanLiteral.split("");
+		romanNumbers=new HashMap<Character, Integer>();
+		romanNumbers.put('I', 1);
+		romanNumbers.put('V', 5);
+		romanNumbers.put('X', 10);
+		romanNumbers.put('L', 50);
+		romanNumbers.put('C', 100);
+		romanNumbers.put('D', 500);
+		romanNumbers.put('M', 1000);
+		char romanArray[]= romanLiteral.toCharArray();
 		int result=0;
-		for(int i=0;i<romanArray.length;i++)
+		int j=0;
+		for(int i=1; i<romanArray.length; i++)
 		{
-			if(romanArray[i].equals("X"))
-			{
-				result=result+10;
+			if(romanNumbers.get(romanArray[j]) < romanNumbers.get(romanArray[i])){
+				int val = romanNumbers.get(romanArray[i]) - romanNumbers.get(romanArray[j]);
+				result= result+val;
+				System.out.println(result);
 			}
-			if(romanArray[i].equals("I"))
+			else
 			{
-				result=result+1;
+				if(j==0)
+				{
+						result = romanNumbers.get(romanArray[0]);
+				}
+				result=result+romanNumbers.get(romanArray[i]);
 			}
-			if(romanArray[i].equals("V"))
-			{
-				result=result+5;
-			}
-			if(romanArray[i].equals("L"))
-			{
-				result=result+50;
-			}
-			if(romanArray[i].equals("C"))
-			{
-				result=result+100;
-			}
-			if(romanArray[i].equals("D"))
-			{
-				result=result+500;
-			}
-			if(romanArray[i].equals("M"))
-			{
-				result=result+1000;
-			}
-			
+			j++;
 		}
-		System.out.println(result);
-		return result;
+			if(j==0)
+			{
+				result=romanNumbers.get(romanArray[0]);
+			}
+			System.out.println(result);
+			return result;
+		}	
 	}
 	
-}
